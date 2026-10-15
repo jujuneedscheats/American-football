@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Clash: Road to Glory</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="menuScreen" class="screen active">
+        <div class="panel large">
+          <p class="eyebrow">College Football Experience</p>
+          <h1>College Clash</h1>
+          <p class="subtitle">Road to Glory</p>
+
+          <div class="menu-buttons">
+            <button class="primary" id="exhibitionBtn">Exhibition Game</button>
+            <button class="primary" id="careerBtn">Road to Glory</button>
+            <button id="controlsBtn">Controls</button>
+          </div>
+
+          <div class="mini-card">
+            <h3>Quick Match</h3>
+            <p>Jump straight into a ranked showdown and beat your rival.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="careerScreen" class="screen">
+        <div class="panel">
+          <h2>Road to Glory</h2>
+          <form id="careerForm">
+            <label>
+              Player Name
+              <input id="playerName" type="text" value="Jax Carter" maxlength="18" />
+            </label>
+
+            <label>
+              School
+              <select id="schoolSelect">
+                <option>Texas A&amp;M</option>
+                <option>Georgia</option>
+                <option>Alabama</option>
+                <option>Ohio State</option>
+                <option>Oregon</option>
+                <option>Michigan</option>
+              </select>
+            </label>
+
+            <label>
+              Position
+              <select id="positionSelect">
+                <option>QB</option>
+                <option>RB</option>
+                <option>WR</option>
+                <option>LB</option>
+              </select>
+            </label>
+
+            <label>
+              Difficulty
+              <select id="difficultySelect">
+                <option value="1">Freshman</option>
+                <option value="2">Varsity</option>
+                <option value="3">Elite</option>
+              </select>
+            </label>
+          </form>
+
+          <div class="menu-buttons">
+            <button class="primary" id="startCareerBtn">Start Career</button>
+            <button id="backToMenuBtn">Back</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="controlsScreen" class="screen">
+        <div class="panel">
+          <h2>Controls</h2>
+          <ul class="controls-list">
+            <li><strong>WASD / Arrow Keys:</strong> Move player</li>
+            <li><strong>Space:</strong> Sprint / Burst move</li>
+            <li><strong>E:</strong> Tackle or press for impact play</li>
+            <li><strong>Enter:</strong> Start / continue drive</li>
+            <li><strong>Esc:</strong> Pause</li>
+          </ul>
+          <button class="primary" id="controlsBackBtn">Back</button>
+        </div>
+      </div>
+
+      <div id="gameScreen" class="screen">
+        <div class="hud">
+          <div class="hud-box">
+            <span id="homeName">Texas A&amp;M</span>
+            <strong id="homeScore">0</strong>
+          </div>
+          <div class="hud-box center-box">
+            <span id="clockText">00:20</span>
+            <small id="driveText">Drive 1</small>
+          </div>
+          <div class="hud-box">
+            <span id="awayName">Georgia</span>
+            <strong id="awayScore">0</strong>
+          </div>
+        </div>
+
+        <canvas id="gameCanvas" width="960" height="520"></canvas>
+
+        <div class="bottom-bar">
+          <div id="statusText">Push the ball down field and score.</div>
+          <div class="controls-mini">Move: WASD / Arrows | Sprint: Space | Tackle: E | Exit: Esc</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
